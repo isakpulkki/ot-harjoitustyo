@@ -1,7 +1,7 @@
 <h1>Ohjelmistotekniikka</h1>
 
-*Tämä on testi.*
+**Tämä on testi.**
 
-_Testataan italic._
+*Testataan italic.*
 
 Tänne tulee myös ohjelmistotekniikan projekti.
