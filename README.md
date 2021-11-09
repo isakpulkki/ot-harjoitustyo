@@ -1,7 +1,8 @@
-<h1>Ohjelmistotekniikka</h1>
+<h1>Ohjelmistotekniikka, harjoitustyö</h1>
 
-**Tämä on testi.**
+<h2>Tehtävät</h2>
 
-*Testataan italic.*
+<h3>Viikko 1</h3>
 
-Tänne tulee myös ohjelmistotekniikan projekti.
+[gitlog.txt](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
