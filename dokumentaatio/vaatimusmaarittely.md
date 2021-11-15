@@ -19,7 +19,7 @@ Peli aukeaa päävalikkonäkymään, josta voi siirtyä pelinäkymään, asetusn
 - pelaajan osuessa hahmollaan palloon, pallo kiihtyy vastakkaiseen suuntaan vihollista kohti
 - pisteet kirjataan yläreunaan
 
-## Asetusnäkymä
+### Asetusnäkymä
 
 - asetusnäkymässä pelaaja voi muuttaa pelin vaikeustasoa, joka määrittelee pallon nopeuden
 - voi valita pelin äänet päälle/pois
