@@ -73,4 +73,6 @@ public class MaksukorttiTest {
         }
         assertEquals("Kortilla on rahaa 0.0 euroa", kortti.toString());
     }
+
+    
 }
