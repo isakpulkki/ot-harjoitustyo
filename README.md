@@ -1,15 +1,33 @@
 <h1>Ohjelmistotekniikka, harjoitustyö</h1>
 
-<h2>Tehtävät</h2>
+### Pong Game
 
-<h3>Viikko 1</h3>
+Tässä sovelluksessa voi pelata suosittua pöytätenniksen kaltaista kaksinpeliä, Pongia. Projekti on luotu Javan versiolla 11, käyttäen JavaFX:ää. Projektin pom.xml:ssä on määritelty Mavenin käyttävän version 1.8 kääntäjää.
 
-[gitlog.txt](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-<h3>Viikko 2</h3>
+<h2>Dokumentaatio</h2>
 
 [Vaatimusmäärittely](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [Tuntikirjanpito](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+
+<h2>Komentorivitoiminnot</h2>
+
+### Testaus
+
+Testit suoritetaan komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
+### Ohjelman suoritus
+Ohjelman pystyy suorittamaan komennolla
+
+```
+mvn compile exec:java -Dexec.mainClass=pong.Main
+```
