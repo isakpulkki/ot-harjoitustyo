@@ -1,9 +1,11 @@
 package pong;
 
 
+import pong.ui.Menu;
+
 public class Main {
     public static void main(String[] args) {
-        UiMain.main(args);
+        Menu.main(args);
     }
 
 }
