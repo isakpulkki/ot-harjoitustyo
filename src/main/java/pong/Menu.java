@@ -37,6 +37,4 @@ public class Menu extends Application {
         this.stage = stage;
         stage.show();
     }
-
-
 }
