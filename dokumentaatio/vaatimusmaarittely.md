@@ -6,7 +6,7 @@ Tällä sovelluksella käyttäjät voivat pelata 'Pong' -videopeliä. Tämä pel
 
 
 ## Käyttöliittymäluonnos
-<img src="dokumentaatio/images/luonnos.png" width="750">
+<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/5be0e73879f20b9a7a443c59c075d37190eb3dbd/dokumentaatio/images/luonnos.jpg" width="750">
 Peli aukeaa päävalikkonäkymään, josta voi siirtyä pelinäkymään, asetusnäkymään tai poistua pelistä.
 
 ## Perusversion tarjoama toiminnallisuus
