@@ -5,4 +5,5 @@
 | 15.11. | 3    | projektin suunnittelu, vaatimusmäärittelyn luominen |
 | 22.11. | 3    | projektin aloitus, toiminnallisuuden suunnittelu |
 | 23.11. | 3    | päävalikon suunnittelua, Jacoco yms. |
-| yht   | 9   | | 
+| 23.11. | 9    | toiminnallisuuden jatkaminen, pakkausten organisointi, luokkien määrittely |
+| yht   | 18   | | 
