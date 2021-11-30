@@ -1,22 +1,28 @@
-package pong.ui;
+package pong.controls;
 
 import javafx.scene.control.Button;
-import javafx.scene.text.Font;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 
 public class MenuButton {
 
     String text;
+    Font font;
+    Settings settings;
 
-    public MenuButton(String text){
+    public MenuButton(String text, Settings settings) {
         this.text = text;
+        this.settings = settings;
+        this.font = settings.getFont();
     }
 
-    public Button makeButton(){
+    public Button makeButton() {
         Button button = new Button(this.text);
-        button.setFont(Font.font("Verdana", 23));
+        button.setFont(font);
         button.setStyle("-fx-background-color: transparent");
+        button.setTextFill(Color.WHITE);
         button.setOnMouseEntered((event -> {
             button.setEffect(new DropShadow());
         }));
