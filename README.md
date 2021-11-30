@@ -31,3 +31,11 @@ Ohjelman pystyy suorittamaan komennolla
 ```
 mvn compile exec:java -Dexec.mainClass=pong.Main
 ```
+### Checkstyle
+
+Checkstyle -tarkistukset suoritetaan komennolla
+
+
+´´´
+ mvn jxr:jxr checkstyle:checkstyle
+ ´´´
