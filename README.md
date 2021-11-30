@@ -10,6 +10,8 @@ Tässä sovelluksessa voi pelata suosittua pöytätenniksen kaltaista kaksinpeli
 
 [Tuntikirjanpito](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
+[Arkkitehtuuri](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 <h2>Komentorivitoiminnot</h2>
 
 ### Testaus
