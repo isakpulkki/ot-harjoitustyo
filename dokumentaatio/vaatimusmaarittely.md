@@ -11,19 +11,26 @@ Peli aukeaa päävalikkonäkymään, josta voi siirtyä pelinäkymään, asetusn
 
 ## Perusversion tarjoama toiminnallisuus
 
+### Valikkonäkymä
+
+- sisältää pelin logon <em>tehty</em>
+- tästä pääsee pelinäkymään, asetusnäkymään tai poistumaan sovelluksesta <em>tehty</em>
+
 ### Pelinäkymä
 
 - pelissä kaksi pelaajaa käyttää kahta näppäintä kontrolloidakseen hahmoaan, siirtämällä tätä ylös tai alas 
 - pelin pallo lähtee keskeltä sattumanvaraiseen suuntaan, vasemmalle tai oikealle
 - pelin pallon osuessa näkymän vasempaan tai oikeaan reunaan vastapuolella oleva hahmo saa pisteen
 - pelaajan osuessa hahmollaan palloon, pallo kiihtyy vastakkaiseen suuntaan vihollista kohti
-- pisteet kirjataan yläreunaan
+- pisteet kirjataan yläreunaan <em>tehty</em>
+- pääsee takaisin valikkoon ESC-napista <em>tehty</em>
 
 ### Asetusnäkymä
 
 - asetusnäkymässä pelaaja voi muuttaa pelin vaikeustasoa, joka määrittelee pallon nopeuden
 - voi valita pelin äänet päälle/pois
-- asetuksiin voisi tehdä lisämahdollisuuksia kustomisoida peliä, esim. valita pelin väriteeman
+- pääsee takaisin päävalikkoon napista <em>tehty</em>
+- asetuksiin voisi tehdä lisämahdollisuuksia kustomisoida peliä, esim. valita pelin taustavärin tai koon
 
 ## Jatkokehitysideoita
 
