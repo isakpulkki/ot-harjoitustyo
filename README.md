@@ -36,6 +36,6 @@ mvn compile exec:java -Dexec.mainClass=pong.Main
 Checkstyle -tarkistukset suoritetaan komennolla
 
 
-´´´
+```
  mvn jxr:jxr checkstyle:checkstyle
- ´´´
+```
