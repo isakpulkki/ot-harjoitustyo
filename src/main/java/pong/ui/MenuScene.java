@@ -13,25 +13,15 @@ import javafx.stage.Stage;
 import pong.controls.Settings;
 import pong.controls.MenuButton;
 
-public class MenuScene {
+public class MenuScene extends Settings {
 
     public Button exit;
     public Button gameSettings;
     public Button start;
     Stage stage;
-    Settings settings;
-    public int height;
-    public int width;
-    public String style;
-    public Font font;
 
-    public MenuScene(Stage stage, Settings settings) {
+    public MenuScene(Stage stage) {
         this.stage = stage;
-        this.settings = settings;
-        height = settings.getHeight();
-        width = settings.getWidth();
-        style = settings.getStyle();
-        font = settings.getFont();
         makeButtons();
     }
 
@@ -56,13 +46,13 @@ public class MenuScene {
     }
 
     public void makeButtons() {
-        MenuButton menuButton = new MenuButton("Pelaa", settings);
+        MenuButton menuButton = new MenuButton("Pelaa");
         start = menuButton.makeButton();
-        start.setOnMouseClicked(e -> new PongScene(stage, settings).getPongScene());
-        menuButton = new MenuButton("Asetukset", settings);
+        start.setOnMouseClicked(e -> new PongScene(stage).getPongScene());
+        menuButton = new MenuButton("Asetukset");
         gameSettings = menuButton.makeButton();
-        gameSettings.setOnMouseClicked(e -> new SettingsScene(stage, settings).getSettingsScene());
-        menuButton = new MenuButton("Poistu", settings);
+        gameSettings.setOnMouseClicked(e -> new SettingsScene(stage).getSettingsScene());
+        menuButton = new MenuButton("Poistu");
         exit = menuButton.makeButton();
         exit.setOnMouseClicked(e -> Platform.exit());
     }

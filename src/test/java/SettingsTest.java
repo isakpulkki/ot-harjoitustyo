@@ -5,10 +5,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import pong.controls.MenuButton;
 import pong.controls.Settings;
+
 import static org.junit.Assert.assertEquals;
+
 @RunWith(JfxRunner.class)
 public class SettingsTest {
     Settings settings;
+
     public SettingsTest() {
         settings = new Settings();
     }
@@ -22,15 +25,15 @@ public class SettingsTest {
     }
 
     @Test
-    public void changeFont(){
+    public void changeFont() {
         Font font = Font.font("Times New Roman", 20);
         this.settings.setFont(font);
         assertEquals(font, settings.getFont());
     }
 
     @Test
-    public void changeFontAndButtonChangesToo(){
-        MenuButton menuButton = new MenuButton("Testi", settings);
+    public void changeFontAndButtonChangesToo() {
+        MenuButton menuButton = new MenuButton("Testi");
         Button testi = menuButton.makeButton();
         assertEquals(testi.getFont(), settings.getFont());
     }

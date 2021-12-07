@@ -11,22 +11,12 @@ import javafx.stage.Stage;
 import pong.controls.Settings;
 import pong.controls.MenuButton;
 
-public class SettingsScene {
+public class SettingsScene extends Settings {
     Stage stage;
-    Settings settings;
-    public int height;
-    public int width;
-    public String style;
-    public Font font;
 
-    public SettingsScene(Stage stage, Settings settings) {
+    public SettingsScene(Stage stage) {
 
         this.stage = stage;
-        this.settings = settings;
-        height = settings.getHeight();
-        width = settings.getWidth();
-        style = settings.getStyle();
-        font = settings.getFont();
 
     }
 
@@ -35,10 +25,10 @@ public class SettingsScene {
         borderPane.setFocusTraversable(true);
         borderPane.setCenter(new Text("Tänne tulee asetukset."));
         borderPane.setStyle(style);
-        MenuButton menuButton = new MenuButton("Päävalikko", settings);
+        MenuButton menuButton = new MenuButton("Päävalikko");
         Button menu = menuButton.makeButton();
         menu.setOnMouseClicked(e -> {
-            this.stage.setScene(new MenuScene(stage, settings).getMenuScene());
+            this.stage.setScene(new MenuScene(stage).getMenuScene());
             stage.show();
         });
         VBox vbox = new VBox(10);

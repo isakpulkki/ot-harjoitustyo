@@ -1,58 +1,118 @@
 package pong.game;
 
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.TextAlignment;
 import pong.controls.Settings;
+import pong.game.entities.Ball;
+import pong.game.entities.Player;
 
-public class GameLogic {
+public class GameLogic extends Settings {
 
-    private final int width;
-    private final int height;
-    private final int playerheight;
-    private final int playerwidth;
-    private final int leftscore;
-    private final int rightscore;
-    private final int leftXpos;
-    private final int leftYpos;
-    private final int rightXpos;
-    private final int rightYpos;
-    Settings settings;
-    Font font;
 
-    public GameLogic(int height, int width, Settings settings) {
-        this.height = height;
-        this.width = width;
-        this.settings = settings;
-        this.font = settings.getFont();
+    private boolean gameStarted;
+    private final Player leftPlayer;
+    private final Player rightPlayer;
+    private Ball ball;
+    private boolean wPressed;
+    private boolean sPressed;
+    private boolean upPressed;
+    private boolean downPressed;
 
-        //Tästä voi säätää pelaajan kokoa
-        this.playerheight = 100;
-        this.playerwidth = 20;
-
-        this.leftscore = 0;
-        this.rightscore = 0;
-
-        this.leftXpos = 1;
-        this.leftYpos = height / 2 - (playerheight / 2);
-        this.rightXpos = width - playerwidth - 1;
-        this.rightYpos = height / 2 - (playerheight / 2);
+    public GameLogic() {
+        leftPlayer = new Player(5, height / 2 - (100 / 2));
+        rightPlayer = new Player(width - 20 - 5, height / 2 - (100 / 2));
+        this.gameStarted = false;
     }
 
-    public void getGraphics(GraphicsContext graphicsContext) {
 
-        graphicsContext.setFont(font);
-        graphicsContext.setFill(Color.WHITE);
-        graphicsContext.setTextAlign(TextAlignment.CENTER);
-        graphicsContext.setLineWidth(2);
-        graphicsContext.fillRect(leftXpos, leftYpos, playerwidth, playerheight);
-        graphicsContext.fillRect(rightXpos, rightYpos, playerwidth, playerheight);
-        graphicsContext.setFill(Color.BLACK);
-        String score = leftscore + " - " + rightscore;
-        graphicsContext.fillText(score, (width / 2), 50);
-        String menu = "Päävalikko [ESC]";
-        graphicsContext.fillText(menu, (width / 2), height - 25);
+    public void getGameLogic() {
+        checkMovement();
+        if (gameStarted) {
+            ball.moveBall();
+        } else {
+            this.ball = new Ball();
+        }
+        if (this.ball.hitsTopOrBottom()) {
+            this.ball.reverseYdirection();
+        }
+        checkForScores();
+        checkForHits();
+    }
+
+    public void checkMovement() {
+        if (wPressed) {
+            this.leftPlayer.decreaseY();
+        }
+        if (sPressed) {
+            this.leftPlayer.increaseY();
+        }
+        if (downPressed) {
+            this.rightPlayer.increaseY();
+        }
+        if (upPressed) {
+            this.rightPlayer.decreaseY();
+        }
+    }
+
+    public void checkForScores() {
+        if (this.ball.getxPos() < this.leftPlayer.getxPos() - playerWidth) {
+            leftPlayer.increaseScore();
+            gameStarted = false;
+        }
+        if (this.ball.getxPos() > this.rightPlayer.getxPos() + playerWidth) {
+            rightPlayer.increaseScore();
+            gameStarted = false;
+        }
+    }
+
+    public void checkForHits() {
+        boolean inLeftPlayersX = this.ball.getxPos() < this.leftPlayer.getxPos() + playerWidth;
+        boolean inRightPlayersX = this.ball.getxPos() + ballRadius > this.rightPlayer.getxPos();
+
+        if (this.ball.hitsPlayer(inLeftPlayersX, this.leftPlayer.getyPos(), playerHeight)) {
+            this.ball.reverseDirection();
+        }
+        if (this.ball.hitsPlayer(inRightPlayersX, this.rightPlayer.getyPos(), playerHeight)) {
+            this.ball.reverseDirection();
+        }
+    }
+
+    public boolean isGameStarted() {
+        return gameStarted;
+    }
+
+    public void setGameStarted(boolean gameStarted) {
+        this.gameStarted = gameStarted;
+    }
+
+
+    public Player getLeftPlayer() {
+        return leftPlayer;
+    }
+
+    public Player getRightPlayer() {
+        return rightPlayer;
+    }
+
+    public Ball getBall() {
+        return ball;
+    }
+
+
+    public void setwPressed(boolean wPressed) {
+        this.wPressed = wPressed;
+    }
+
+
+    public void setsPressed(boolean sPressed) {
+        this.sPressed = sPressed;
+    }
+
+
+    public void setUpPressed(boolean upPressed) {
+        this.upPressed = upPressed;
+    }
+
+
+    public void setDownPressed(boolean downPressed) {
+        this.downPressed = downPressed;
     }
 }

@@ -6,51 +6,80 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Font;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import pong.controls.Settings;
-import pong.game.GameLogic;
+import pong.game.GameUi;
+
+import java.io.FileNotFoundException;
 
 
-public class PongScene {
+public class PongScene extends Settings {
 
     Stage stage;
-    Settings settings;
-    public int height;
-    public int width;
-    public String style;
-    public Font font;
 
-    public PongScene(Stage stage, Settings settings) {
+    public PongScene(Stage stage) {
         this.stage = stage;
-        this.settings = settings;
-        height = settings.getHeight();
-        width = settings.getWidth();
-        style = settings.getStyle();
-        font = settings.getFont();
     }
 
     public void getPongScene() {
         Canvas canvas = new Canvas(width, height);
         canvas.setFocusTraversable(true);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        canvas.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.ESCAPE) {
-                stage.setScene(new MenuScene(stage, settings).getMenuScene());
-                stage.show();
+        GameUi gameUi = new GameUi(graphicsContext);
+        KeyFrame keyframe = new KeyFrame(Duration.millis(8), e -> {
+            try {
+                gameUi.getGraphics();
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
             }
         });
-        GameLogic gameLogic = new GameLogic(height, width, settings);
-        KeyFrame keyframe = new KeyFrame(Duration.millis(10), e -> gameLogic.getGraphics(graphicsContext));
         Timeline timeline = new Timeline(keyframe);
         timeline.setCycleCount(Timeline.INDEFINITE);
-        BorderPane borderPane = new BorderPane(canvas);
-        borderPane.setStyle(style);
-        timeline.play();
-        stage.setScene(new Scene(borderPane, width, height));
+        setKeyListeners(gameUi, canvas, timeline);
+        StackPane stackPane = new StackPane(canvas);
+        stackPane.setStyle(style);
+        stage.setScene(new Scene(stackPane));
         stage.show();
+        timeline.play();
+    }
+
+    public void setKeyListeners(GameUi gameUi, Canvas canvas, Timeline timeline) {
+        canvas.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ESCAPE) {
+                timeline.stop();
+                stage.setScene(new MenuScene(stage).getMenuScene());
+                stage.show();
+            }
+            if (e.getCode() == KeyCode.DOWN) {
+                gameUi.getGameLogic().setDownPressed(true);
+            }
+            if (e.getCode() == KeyCode.UP) {
+                gameUi.getGameLogic().setUpPressed(true);
+            }
+            if (e.getCode() == KeyCode.S) {
+                gameUi.getGameLogic().setsPressed(true);
+            }
+            if (e.getCode() == KeyCode.W) {
+                gameUi.getGameLogic().setwPressed(true);
+                gameUi.getGameLogic().setGameStarted(true);
+            }
+        });
+        canvas.setOnKeyReleased(e -> {
+            if (e.getCode() == KeyCode.DOWN) {
+                gameUi.getGameLogic().setDownPressed(false);
+            }
+            if (e.getCode() == KeyCode.UP) {
+                gameUi.getGameLogic().setUpPressed(false);
+            }
+            if (e.getCode() == KeyCode.S) {
+                gameUi.getGameLogic().setsPressed(false);
+            }
+            if (e.getCode() == KeyCode.W) {
+                gameUi.getGameLogic().setwPressed(false);
+            }
+        });
     }
 
 

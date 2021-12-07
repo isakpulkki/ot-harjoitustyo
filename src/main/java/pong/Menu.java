@@ -12,10 +12,6 @@ import pong.ui.MenuScene;
 public class Menu extends Application {
 
     public Stage stage;
-    public Settings settings = new Settings();
-    public int height = settings.getHeight();
-    public int width = settings.getWidth();
-    public String style = settings.getStyle();
 
     public static void main(String[] args) {
         launch(args);
@@ -26,11 +22,11 @@ public class Menu extends Application {
         stage.setTitle("Pong Game");
         stage.setResizable(false);
         stage.setMaximized(false);
-        MenuScene menuScene = new MenuScene(stage, settings);
+        MenuScene menuScene = new MenuScene(stage);
         stage.setScene(menuScene.getMenuScene());
         stage.addEventHandler(KeyEvent.KEY_PRESSED, e -> {
             if (e.getCode() == KeyCode.ESCAPE) {
-                stage.setScene(new MenuScene(stage, settings).getMenuScene());
+                stage.setScene(new MenuScene(stage).getMenuScene());
                 stage.show();
             }
         });

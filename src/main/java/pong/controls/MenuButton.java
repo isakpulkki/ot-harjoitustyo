@@ -3,19 +3,13 @@ package pong.controls;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
-
-public class MenuButton {
+public class MenuButton extends Settings {
 
     String text;
-    Font font;
-    Settings settings;
 
-    public MenuButton(String text, Settings settings) {
+    public MenuButton(String text) {
         this.text = text;
-        this.settings = settings;
-        this.font = settings.getFont();
     }
 
     public Button makeButton() {
