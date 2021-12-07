@@ -63,8 +63,8 @@ public class PongScene extends Settings {
             }
             if (e.getCode() == KeyCode.W) {
                 gameUi.getGameLogic().setwPressed(true);
-                gameUi.getGameLogic().setGameStarted(true);
             }
+            gameUi.getGameLogic().setGameStarted(true);
         });
         canvas.setOnKeyReleased(e -> {
             if (e.getCode() == KeyCode.DOWN) {
