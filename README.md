@@ -12,6 +12,8 @@ Tässä sovelluksessa voi pelata suosittua pöytätenniksen kaltaista kaksinpeli
 
 [Arkkitehtuuri](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Pong 1.0](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/viikko5)
+
 <h2>Komentorivitoiminnot</h2>
 
 ### Testaus
@@ -41,3 +43,5 @@ Checkstyle -tarkistukset suoritetaan komennolla
 ```
  mvn jxr:jxr checkstyle:checkstyle
 ```
+
+
