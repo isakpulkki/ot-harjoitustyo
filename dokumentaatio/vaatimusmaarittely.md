@@ -18,10 +18,10 @@ Peli aukeaa päävalikkonäkymään, josta voi siirtyä pelinäkymään, asetusn
 
 ### Pelinäkymä
 
-- pelissä kaksi pelaajaa käyttää kahta näppäintä kontrolloidakseen hahmoaan, siirtämällä tätä ylös tai alas 
-- pelin pallo lähtee keskeltä sattumanvaraiseen suuntaan, vasemmalle tai oikealle
-- pelin pallon osuessa näkymän vasempaan tai oikeaan reunaan vastapuolella oleva hahmo saa pisteen
-- pelaajan osuessa hahmollaan palloon, pallo kiihtyy vastakkaiseen suuntaan vihollista kohti
+- pelissä kaksi pelaajaa käyttää kahta näppäintä kontrolloidakseen hahmoaan, siirtämällä tätä ylös tai alas <em>tehty</em>
+- pelin pallo lähtee keskeltä sattumanvaraiseen suuntaan, vasemmalle tai oikealle <em>tehty</em>
+- pelin pallon osuessa näkymän vasempaan tai oikeaan reunaan vastapuolella oleva hahmo saa pisteen <em>tehty</em>
+- pelaajan osuessa hahmollaan palloon, pallo kiihtyy vastakkaiseen suuntaan vihollista kohti <em>tehty</em>
 - pisteet kirjataan yläreunaan <em>tehty</em>
 - pääsee takaisin valikkoon ESC-napista <em>tehty</em>
 
