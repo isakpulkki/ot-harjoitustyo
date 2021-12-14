@@ -13,13 +13,13 @@ java -jar todoapp.jar
 ## Pelaaminen
 
 Peliä pääsee pelaamaan painamalla valikossa 'Pelaa' -nappia, sovelluslogiikka on vielä hieman kesken mutta peliä pystyy pelaamaan, näkymässä ohjeet pelin pelaamiseen, 
-pelin on tarkoitus myös myöhemmin loppua jossain pisteessä
+pelin on tarkoitus myös myöhemmin loppua jossain pisteessä.
 
 ## Asetuksien vaihto
 
-'Asetukset' -nappia painamalla pääsee asetusnäkymään, jossa voi vaihtaa tällä hetkellä pelin vaikeustasoa
+'Asetukset' -nappia painamalla pääsee asetusnäkymään, jossa voi vaihtaa tällä hetkellä pelin vaikeustasoa.
 
 ## Sulkeminen
 
-'Poistu' -napista voi sulkea pelin, tai vaihtoehtoisesti ruksia painamalla
+'Poistu' -napista voi sulkea pelin, tai vaihtoehtoisesti ruksia painamalla.
 
