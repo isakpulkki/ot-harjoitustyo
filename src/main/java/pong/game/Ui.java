@@ -10,22 +10,31 @@ import pong.game.entities.Player;
 
 import java.io.FileNotFoundException;
 
-public class GameUi extends Settings {
+/**
+ * This class makes the user interface and calls for logic
+ */
+
+public class Ui extends Settings {
 
     GraphicsContext graphicsContext;
-    GameLogic gameLogic;
+    Logic logic;
 
-    public GameUi(GraphicsContext graphicsContext) {
+    public Ui(GraphicsContext graphicsContext) {
         this.graphicsContext = graphicsContext;
-        gameLogic = new GameLogic();
+        logic = new Logic();
     }
+
+    /**
+     * This method initializes the game graphicsContext, and makes Logic-object
+     * @throws FileNotFoundException throws this if the file is not found
+     */
 
     public void getGraphics() throws FileNotFoundException {
         graphicsContext.clearRect(0, 0, width, height);
-        gameLogic.getGameLogic();
-        Player leftPlayer = gameLogic.getLeftPlayer();
-        Player rightPlayer = gameLogic.getRightPlayer();
-        Ball ball = gameLogic.getBall();
+        logic.getGameLogic();
+        Player leftPlayer = logic.getLeftPlayer();
+        Player rightPlayer = logic.getRightPlayer();
+        Ball ball = logic.getBall();
         graphicsContext.setFont(font);
         graphicsContext.setFill(Color.WHITE);
         graphicsContext.setTextAlign(TextAlignment.CENTER);
@@ -34,12 +43,17 @@ public class GameUi extends Settings {
         graphicsContext.setFill(Color.BLACK);
         String score = leftPlayer.getScore() + " - " + rightPlayer.getScore();
         graphicsContext.fillText(score, (width / 2), 50);
-        if (gameLogic.isGameStarted()) {
+        if (logic.isGameStarted()) {
             graphicsContext.fillOval(ball.getxPos(), ball.getyPos(), ballRadius, ballRadius);
         } else {
             pauseGame(graphicsContext);
         }
     }
+
+    /**
+     * This function pauses the game
+     * @param graphicsContext, includes the games graphics
+     */
 
     public void pauseGame(GraphicsContext graphicsContext) {
         graphicsContext.fillText("Aloita painamalla näppäintä", width / 2, height / 2);
@@ -56,8 +70,14 @@ public class GameUi extends Settings {
         graphicsContext.fillText("Päävalikko", width / 2, height - (image.getHeight() * 1.5));
     }
 
-    public GameLogic getGameLogic() {
-        return gameLogic;
+
+
+    /**
+     * Just returns this Ui's Logic-object
+     * @return
+     */
+    public Logic getGameLogic() {
+        return logic;
     }
 
 }

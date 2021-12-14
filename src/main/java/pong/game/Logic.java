@@ -4,7 +4,7 @@ import pong.controls.Settings;
 import pong.game.entities.Ball;
 import pong.game.entities.Player;
 
-public class GameLogic extends Settings {
+public class Logic extends Settings {
 
 
     private boolean gameStarted;
@@ -16,9 +16,9 @@ public class GameLogic extends Settings {
     private boolean upPressed;
     private boolean downPressed;
 
-    public GameLogic() {
-        leftPlayer = new Player(5, height / 2 - (100 / 2));
-        rightPlayer = new Player(width - 20 - 5, height / 2 - (100 / 2));
+    public Logic() {
+        leftPlayer = new Player(8, height / 2 - (100 / 2));
+        rightPlayer = new Player(width - playerWidth - 8, height / 2 - (100 / 2));
         this.gameStarted = false;
     }
 
@@ -33,8 +33,8 @@ public class GameLogic extends Settings {
         if (this.ball.hitsTopOrBottom()) {
             this.ball.reverseYdirection();
         }
-        checkForScores();
         checkForHits();
+        checkForScores();
     }
 
     public void checkMovement() {
@@ -57,6 +57,7 @@ public class GameLogic extends Settings {
             leftPlayer.increaseScore();
             gameStarted = false;
         }
+
         if (this.ball.getxPos() > this.rightPlayer.getxPos() + playerWidth) {
             rightPlayer.increaseScore();
             gameStarted = false;
@@ -64,14 +65,12 @@ public class GameLogic extends Settings {
     }
 
     public void checkForHits() {
-        boolean inLeftPlayersX = this.ball.getxPos() < this.leftPlayer.getxPos() + playerWidth;
-        boolean inRightPlayersX = this.ball.getxPos() + ballRadius > this.rightPlayer.getxPos();
 
-        if (this.ball.hitsPlayer(inLeftPlayersX, this.leftPlayer.getyPos(), playerHeight)) {
-            this.ball.reverseDirection();
+        if (this.ball.getxPos() <= this.leftPlayer.getxPos() + playerWidth) {
+            this.ball.hitsPlayer(this.leftPlayer.getyPos());
         }
-        if (this.ball.hitsPlayer(inRightPlayersX, this.rightPlayer.getyPos(), playerHeight)) {
-            this.ball.reverseDirection();
+        if (this.ball.getxPos() + ballRadius >= this.rightPlayer.getxPos()) {
+            this.ball.hitsPlayer(this.rightPlayer.getyPos());
         }
     }
 

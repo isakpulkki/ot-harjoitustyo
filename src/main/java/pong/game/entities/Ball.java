@@ -23,7 +23,7 @@ public class Ball extends Settings {
     public Ball() {
         this.xPos = width / 2;
         this.yPos = height / 2;
-        this.xSpeed = 3 * (new Random().nextInt(2) == 0 ? 1 : -1);
+        this.xSpeed = difficulty * (new Random().nextInt(2) == 0 ? 1 : -1);
         this.ySpeed = -1 + new Random().nextInt(2) == 0 ? 1 : -1;
     }
 
@@ -38,18 +38,14 @@ public class Ball extends Settings {
         this.ySpeed = ySpeed * -1;
     }
 
-    public void reverseDirection() {
-        this.ySpeed = new Random().nextInt(6) - 3;
-        this.xSpeed += 1 * Math.signum(xSpeed);
-        this.xSpeed *= -1;
-        this.ySpeed *= -1;
-    }
-
-    public boolean hitsPlayer(boolean ball, int playeryPos, int playerheight) {
-        if (ball && yPos >= playeryPos && yPos <= playeryPos + playerheight) {
-            return true;
+    public void hitsPlayer(int playeryPos) {
+        if (yPos >= playeryPos && yPos <= playeryPos + playerHeight) {
+            double relative = playeryPos + (playerHeight / 2) - yPos;
+            double normal = relative / (playerHeight / 2) * 2;
+            double bounceangle = normal * difficulty;
+            this.ySpeed = (int) bounceangle;
+            this.xSpeed *= -1;
         }
-        return false;
     }
 
     public int getxPos() {

@@ -8,23 +8,28 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import pong.controls.Settings;
 import pong.controls.MenuButton;
-
-public class MenuScene extends Settings {
+/**
+* Makes the Menu -scene in the application
+ */
+public class Menu extends pong.controls.Settings {
 
     public Button exit;
     public Button gameSettings;
     public Button start;
     Stage stage;
 
-    public MenuScene(Stage stage) {
+    public Menu(Stage stage) {
         this.stage = stage;
         makeButtons();
     }
 
+
+    /**
+     * Makes and returns the menu scene
+     * @return this is the scene
+     */
 
     public Scene getMenuScene() {
         BorderPane borderPane = new BorderPane();
@@ -45,13 +50,16 @@ public class MenuScene extends Settings {
         return new Scene(borderPane, width, height);
     }
 
+    /**
+    * Makes the buttons for this scene, using my 'MenuButton' -class
+     */
     public void makeButtons() {
         MenuButton menuButton = new MenuButton("Pelaa");
         start = menuButton.makeButton();
-        start.setOnMouseClicked(e -> new PongScene(stage).getPongScene());
+        start.setOnMouseClicked(e -> new Pong(stage).getPongScene());
         menuButton = new MenuButton("Asetukset");
         gameSettings = menuButton.makeButton();
-        gameSettings.setOnMouseClicked(e -> new SettingsScene(stage).getSettingsScene());
+        gameSettings.setOnMouseClicked(e -> new Settings(stage).getSettingsScene());
         menuButton = new MenuButton("Poistu");
         exit = menuButton.makeButton();
         exit.setOnMouseClicked(e -> Platform.exit());
