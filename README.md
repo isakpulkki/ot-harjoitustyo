@@ -45,4 +45,11 @@ Checkstyle -tarkistukset suoritetaan komennolla
  mvn jxr:jxr checkstyle:checkstyle
 ```
 
+### JavaDoc
+
+JavaDoc saadaan generoitua komennolla
+
+```
+mvn javadoc:javadoc
+```
 
