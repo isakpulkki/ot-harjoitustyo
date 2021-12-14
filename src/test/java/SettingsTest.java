@@ -19,7 +19,7 @@ public class SettingsTest {
 
     @Test
     public void changeHeight() {
-        this.settings.height = 2000;
+        Settings.height = 2000;
         this.settings.setFont(Font.font("Times New Roman", 20));
         assertEquals(2000, settings.getHeight());
     }
