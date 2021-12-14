@@ -1,7 +1,5 @@
 # Käyttöohje
 
-https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/viikko6
-
 Lataa tiedosto [pong_2.0.jar](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Ohjelman käynnistäminen
