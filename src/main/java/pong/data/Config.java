@@ -1,10 +1,10 @@
-package pong.controls;
+package pong.data;
 
 import javafx.scene.text.Font;
 
 
 
-public class Settings {
+public class Config {
 
     public static int height;
     public static int width;
@@ -15,9 +15,11 @@ public class Settings {
     public static int playerSpeed;
     public static String style;
     public static Font font;
+    public static boolean sounds;
+    public static Font smallFont;
 
     //Tästä voi säätää pelin teemaa ja kokoa universaalisti
-    public Settings() {
+    public Config() {
     }
 
     public int getHeight() {
@@ -29,6 +31,6 @@ public class Settings {
     }
 
     public void setFont(Font font) {
-        Settings.font = font;
+        Config.font = font;
     }
 }

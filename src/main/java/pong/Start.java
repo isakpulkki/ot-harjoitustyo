@@ -1,11 +1,10 @@
 package pong;
 
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import pong.controls.Settings;
 import pong.ui.Menu;
 
 /**
@@ -26,9 +25,10 @@ public class Start extends Application {
      */
 
     public void start(Stage stage) {
-        stage.setTitle("Pong Game");
+        stage.setTitle("Pong");
         stage.setResizable(false);
         stage.setMaximized(false);
+        stage.getIcons().add(new Image(getClass().getResource("/icon.png").toExternalForm()));
         Menu menu = new Menu(stage);
         stage.setScene(menu.getMenuScene());
         stage.addEventHandler(KeyEvent.KEY_PRESSED, e -> {
@@ -40,4 +40,5 @@ public class Start extends Application {
         this.stage = stage;
         stage.show();
     }
+
 }

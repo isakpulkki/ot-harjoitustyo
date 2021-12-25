@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ot-harjoitustyo" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="pong.Main" />
+    <module name="ot-harjoitustyo" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

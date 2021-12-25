@@ -9,7 +9,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import pong.controls.Settings;
+import pong.data.Config;
 import pong.game.Ui;
 
 import java.io.FileNotFoundException;
@@ -18,7 +18,7 @@ import java.io.FileNotFoundException;
 * Makes the Game -scene in the application
  */
 
-public class Pong extends Settings {
+public class Pong extends Config {
 
     Stage stage;
 
@@ -33,7 +33,7 @@ public class Pong extends Settings {
         canvas.setFocusTraversable(true);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         Ui ui = new Ui(graphicsContext);
-        KeyFrame keyframe = new KeyFrame(Duration.millis(10), e -> {
+        KeyFrame keyframe = new KeyFrame(Duration.millis(15), e -> {
             try {
                 ui.getGraphics();
             } catch (FileNotFoundException ex) {

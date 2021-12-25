@@ -1,14 +1,15 @@
-package pong.controls;
+package pong.ui.controls;
 
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
+import pong.data.Config;
 
-public class MenuButton extends Settings {
+public class CustomButton extends Config {
 
     String text;
 
-    public MenuButton(String text) {
+    public CustomButton(String text) {
         this.text = text;
     }
 

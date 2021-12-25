@@ -1,10 +1,12 @@
 package pong.game.entities;
 
-import pong.controls.Settings;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import pong.data.Config;
 
 import java.util.Random;
 
-public class Ball extends Settings {
+public class Ball extends Config {
 
     private int xPos;
     private int yPos;
@@ -23,8 +25,16 @@ public class Ball extends Settings {
     public Ball() {
         this.xPos = width / 2;
         this.yPos = height / 2;
-        this.xSpeed = difficulty * (new Random().nextInt(2) == 0 ? 1 : -1);
-        this.ySpeed = -1 + new Random().nextInt(2) == 0 ? 1 : -1;
+        int upOrDown;
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            upOrDown = -1;
+        } else {
+            upOrDown = 1;
+        }
+        this.ySpeed = (int) (difficulty * Math.sin(0.25));
+        this.xSpeed = (int) (upOrDown * Math.sqrt(difficulty * difficulty - (ySpeed * ySpeed)));
+
     }
 
     public boolean hitsTopOrBottom() {
@@ -35,16 +45,34 @@ public class Ball extends Settings {
     }
 
     public void reverseYdirection() {
+        if (yPos < 0){
+            yPos += Math.abs(ySpeed);
+        }
+
+        if (yPos > height) {
+            yPos -= Math.abs(ySpeed);
+        }
         this.ySpeed = ySpeed * -1;
     }
 
     public void hitsPlayer(int playeryPos) {
-        if (yPos >= playeryPos && yPos <= playeryPos + playerHeight) {
+        if (yPos + ballRadius >= playeryPos && yPos <= playeryPos + playerHeight) {
             double relative = playeryPos + (playerHeight / 2) - yPos;
-            double normal = relative / (playerHeight / 2) * 2;
-            double bounceangle = normal * difficulty;
-            this.ySpeed = (int) bounceangle;
+            double normal = relative / (playerHeight / 2);
+            this.ySpeed = (int) (difficulty * -Math.sin(normal));
+            this.xSpeed = xSpeed + 1;
+            if (this.xPos < playeryPos) {
+                this.xPos -= xSpeed;
+                xSpeed -= 1;
+            } else if (this.xPos > playeryPos) {
+                this.xPos -= xSpeed;
+                xSpeed += 1;
+            }
             this.xSpeed *= -1;
+            if (sounds) {
+                MediaPlayer sound = new MediaPlayer(new Media(getClass().getResource("/hitsplayer.mp3").toExternalForm()));
+                sound.play();
+            }
         }
     }
 
