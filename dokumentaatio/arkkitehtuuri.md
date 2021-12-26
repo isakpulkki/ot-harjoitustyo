@@ -17,7 +17,7 @@ Luokkakaaviosta näkee, että kaikki luokat ovat riippuvaisia Config-luokasta. C
 
 ### Sekvenssikaavio
 
-Tämä sekvenssikaavio kuvaa ohjelman toimintaa käyttäjän syötteiden käsittelyyn
+Tämä sekvenssikaavio kuvaa ohjelman toimintaa kun Graphics -luokan getGraphics -metodia kutsutaan. Grafiikkaluokka kutsuu pelilogiikkaa, joka tarkastelee ensin täytyykö pelaajia liikuttaa. Sen jälkeen tarkastellaan onko peli käynnissä. Jos peli on käynnissä niin seuraavaksi palloa liikutetaan eteenpäin sen suuntaa kohti. Jos ei, niin pallo luodaan. Seuraavaksi logiikka kutsuu palloa tarkastelemaan osuuko se reunoille tai pelaajiin. Lopuksi katsellaan onko pisteitä tullut. Jos on niin pelaajien pisteitä nostetaan. Jos huomataan että joku on saanut tarvittavan pisterajan niin pisteet nollataan. Lopuksi Graphics -luokka piirtää kaikki komponentit ja tarkastelee onko peli käynnissä, kesken vai alkamassa ja sen mukaan asettaa näkymän.
 
 <img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/sequencediagram.png" width="600">
 
