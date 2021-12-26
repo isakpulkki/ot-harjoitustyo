@@ -42,7 +42,6 @@ tai vaihtoehtoisesti ohjelmasta voi luoda .jar -tiedoston komennolla
 ```
 mvn compile exec:java -Dexec.mainClass=pong.Main
 ```
-.jar löytyy tämän jälkeen /target-kansiosta
 
 ### Checkstyle
 
