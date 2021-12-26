@@ -2,13 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Tällä sovelluksella käyttäjät voivat pelata 'Pong' -videopeliä. Tämä peli on pöytätenniksen tapainen kaksinpeli, johon tarvitsee kaksi pelaajaa. Peliin mahdollisesti tulee myös sisältymään mahdollisuus tietokonetta vastaan pelaamiseen, jos resurssit riittää. 
-
-
-## Käyttöliittymäluonnos
-<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/5be0e73879f20b9a7a443c59c075d37190eb3dbd/dokumentaatio/images/luonnos.jpg" width="600">
-
-Peli aukeaa päävalikkonäkymään, josta voi siirtyä pelinäkymään, asetusnäkymään tai poistua pelistä.
+Tällä sovelluksella käyttäjät voivat pelata 'Pong' -videopeliä. Tämä peli on pöytätenniksen tapainen kaksinpeli, johon tarvitsee kaksi pelaajaa. Peli aukeaa päävalikkonäkymään, josta voi siirtyä pelinäkymään, asetusnäkymään tai poistua pelistä.
 
 ## Perusversion tarjoama toiminnallisuus
 
