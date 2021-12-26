@@ -20,7 +20,7 @@ public class SettingsLogic extends Config {
     public Slider playerSizeSlider() {
         Slider slider = new CustomSlider(75, 125, 25).getCustomSlider();
         slider.setValue(playerHeight);
-        slider.setLabelFormatter(customSliderLabels("Ohut", "Normaali", "Leveä", slider));
+        slider.setLabelFormatter(customSliderLabels("Ohut", "Normaali", "Suuri", slider));
         slider.setOnMouseReleased(e -> {
             ConfigDao.updateValue("playerHeight", (int) slider.getValue());
         });
