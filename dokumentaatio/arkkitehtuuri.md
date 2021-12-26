@@ -15,6 +15,8 @@ Tässä sovelluksen toimintaa kuvaava luokkakaavio
 
 Luokkakaaviosta näkee, että kaikki luokat ovat riippuvaisia Config-luokasta. Config-luokka määrittelee jokaisen näkymän leveyden, korkeuden ja muita ominaisuuksia. Käyttöliittymäluokkien väliset riippuvuudet kuvaa eri näkymistä siirtymistä toisiin näkymiin. Asetuslogiikka päivittää tietokantaa. Pelin grafiikka ja logiikka ovat riippuvaisia toisistaan, sillä logiikka kertoo grafiikalle mitä piirtää.
 
+## Pelilogiikka
+
 ### Sekvenssikaavio
 
 Tämä sekvenssikaavio kuvaa ohjelman toimintaa kun Graphics -luokan getGraphics -metodia kutsutaan
