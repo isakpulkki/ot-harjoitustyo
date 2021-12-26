@@ -27,4 +27,4 @@ Grafiikkaluokka kutsuu pelilogiikkaa, joka tarkastelee ensin täytyykö pelaajia
 
 ### Konfiguraatio
 
-Kaikki luokat ovat Config-luokan lapsiolioita, jonka tajusin liian myöhään tämän olevan luultavasti väärä lähestymistapa siirtää tietoa universaalisti. Oikea tapa olisi luultavasti ollut siirtää oliosta toiseen tuota luokkaa.
+Kaikki luokat ovat Config -luokan lapsiolioita, jonka tajusin liian myöhään tämän olevan luultavasti väärä lähestymistapa siirtää tietoa universaalisti. Oikea tapa olisi luultavasti ollut siirtää oliosta toiseen tuota luokkaa.
