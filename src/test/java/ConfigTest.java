@@ -3,38 +3,38 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Font;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import pong.ui.controls.CustomButton;
+import pong.utils.CustomButton;
 import pong.data.Config;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JfxRunner.class)
-public class PreferencesTest {
-    Config preferences;
+public class ConfigTest {
+    Config config;
 
-    public PreferencesTest() {
-        preferences = new Config();
+    public ConfigTest() {
+        config = new Config();
     }
 
 
     @Test
     public void changeHeight() {
         Config.height = 2000;
-        this.preferences.setFont(Font.font("Times New Roman", 20));
-        assertEquals(2000, preferences.getHeight());
+        assertEquals(2000, config.getHeight());
     }
 
     @Test
     public void changeFont() {
         Font font = Font.font("Times New Roman", 20);
-        this.preferences.setFont(font);
-        assertEquals(font, preferences.getFont());
+        this.config.setFont(font);
+        assertEquals(font, config.getFont());
     }
 
     @Test
     public void changeFontAndButtonChangesToo() {
+        Config.font = Font.font("Verdana", 20);
         CustomButton menuButton = new CustomButton("Testi");
-        Button testi = menuButton.makeButton();
-        assertEquals(testi.getFont(), preferences.getFont());
+        Button test = menuButton.getCustomButton();
+        assertEquals(test.getFont(), config.getFont());
     }
 }

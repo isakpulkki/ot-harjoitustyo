@@ -1,7 +1,7 @@
 import de.saxsys.javafx.test.JfxRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import pong.game.entities.Ball;
+import pong.application.game.entities.Ball;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JfxRunner.class)

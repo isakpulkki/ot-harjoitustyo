@@ -1,13 +1,14 @@
-package pong.game;
-
+package pong.application.game;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import pong.application.game.entities.Ball;
+import pong.application.game.entities.Player;
 import pong.data.Config;
-import pong.game.entities.Ball;
-import pong.game.entities.Player;
 
-public class Logic extends Config {
-
+/**
+ * Contains the games logic
+ */
+public class GameLogic extends Config {
 
     private boolean gameStarted;
     private final Player leftPlayer;
@@ -19,35 +20,22 @@ public class Logic extends Config {
     private boolean downPressed;
     private boolean winnerLeft;
     private boolean winnerRight;
-    public boolean gameinProgress;
+    public boolean gameInProgress;
 
-    public boolean isGameinProgress() {
-        return gameinProgress;
-    }
-
-    public void setGameinProgress(boolean gameinProgress) {
-        this.gameinProgress = gameinProgress;
-    }
-
-    public Logic() {
+    public GameLogic() {
         leftPlayer = new Player(8, height / 2 - (100 / 2));
         rightPlayer = new Player(width - playerWidth - 8, height / 2 - (100 / 2));
         this.gameStarted = false;
 
     }
 
-    public void gameinProgress(){
-        if (leftPlayer.getScore() > 0 || rightPlayer.getScore() > 0){
-            gameinProgress = true;
-            return;
-        }
-            gameinProgress = false;
-    }
-
+    /**
+     * Controls the game logic
+     */
     public void getGameLogic() {
 
         checkMovement();
-        gameinProgress();
+        checkIfGameInProgress();
         if (gameStarted) {
             ball.moveBall();
         } else {
@@ -64,6 +52,20 @@ public class Logic extends Config {
         checkForScores();
     }
 
+    /**
+     * Checks if the game is in progress or just starting
+     */
+    public void checkIfGameInProgress() {
+        if (leftPlayer.getScore() > 0 || rightPlayer.getScore() > 0) {
+            gameInProgress = true;
+            return;
+        }
+        gameInProgress = false;
+    }
+
+    /**
+     * Checks if players are moving currently or not and moves them if yes
+     */
     public void checkMovement() {
         if (wPressed) {
             this.leftPlayer.decreaseY();
@@ -79,45 +81,39 @@ public class Logic extends Config {
         }
     }
 
-    public boolean isWinnerLeft() {
-        return winnerLeft;
+    /**
+     * Resets players scores
+     */
+    public void resetPlayersScore() {
+        leftPlayer.setScore(0);
+        rightPlayer.setScore(0);
     }
 
-    public boolean isWinnerRight() {
-        return winnerRight;
-    }
-
-    public void setWinnerLeft(boolean winnerLeft) {
-        this.winnerLeft = winnerLeft;
-    }
-
-    public void setWinnerRight(boolean winnerRight) {
-        this.winnerRight = winnerRight;
-    }
-
+    /**
+     * Checks if player has scored
+     */
     public void checkForScores() {
         if (this.ball.getxPos() < this.leftPlayer.getxPos() - playerWidth) {
             rightPlayer.increaseScore();
-            if (rightPlayer.getScore() == 10){
-                leftPlayer.setScore(0);
-                rightPlayer.setScore(0);
+            if (rightPlayer.getScore() == winScore) {
+                resetPlayersScore();
                 winnerRight = true;
             }
             gameStarted = false;
         }
-
         if (this.ball.getxPos() > this.rightPlayer.getxPos() + playerWidth) {
-
             leftPlayer.increaseScore();
-            if (leftPlayer.getScore() == 10){
-                leftPlayer.setScore(0);
-                rightPlayer.setScore(0);
+            if (leftPlayer.getScore() == winScore) {
+                resetPlayersScore();
                 winnerLeft = true;
             }
             gameStarted = false;
         }
     }
 
+    /**
+     * Checks if player has hit the ball
+     */
     public void checkForHits() {
 
         if (this.ball.getxPos() <= this.leftPlayer.getxPos() + playerWidth) {
@@ -137,6 +133,21 @@ public class Logic extends Config {
         this.gameStarted = gameStarted;
     }
 
+    public boolean isWinnerLeft() {
+        return winnerLeft;
+    }
+
+    public boolean isWinnerRight() {
+        return winnerRight;
+    }
+
+    public void setWinnerLeft(boolean winnerLeft) {
+        this.winnerLeft = winnerLeft;
+    }
+
+    public void setWinnerRight(boolean winnerRight) {
+        this.winnerRight = winnerRight;
+    }
 
     public Player getLeftPlayer() {
         return leftPlayer;

@@ -20,9 +20,11 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>pong/*</exclude>
-                        <exclude>pong/ui/*</exclude>
-                        <exclude>pong/game/*</exclude>
+                        <exclude>pong/Main.*</exclude>
+                        <exclude>pong/Start.*</exclude>
+                        <exclude>pong/application/ui/*</exclude>
+                        <exclude>pong/application/game/Graphics.*</exclude>
+                        <exclude>pong/application/settings/SettingsLogic.new*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -85,12 +87,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>13.0.2</version>
+            <version>17.0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>11.0.2</version>
+            <version>17.0.0.1</version>
         </dependency>
         <dependency>
             <groupId>de.saxsys</groupId>

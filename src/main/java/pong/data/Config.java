@@ -3,6 +3,10 @@ package pong.data;
 import javafx.scene.text.Font;
 
 
+/**
+ * This is universal kind of interface for all the classes to get game's configurations like user interfaces width,
+ * height etc. Which can be selected in the main-method
+ */
 
 public class Config {
 
@@ -13,14 +17,11 @@ public class Config {
     public static int ballRadius;
     public static int difficulty;
     public static int playerSpeed;
+    public static int winScore;
     public static String style;
     public static Font font;
     public static boolean sounds;
     public static Font smallFont;
-
-    //Tästä voi säätää pelin teemaa ja kokoa universaalisti
-    public Config() {
-    }
 
     public int getHeight() {
         return height;
