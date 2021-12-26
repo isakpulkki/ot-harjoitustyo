@@ -14,7 +14,7 @@ java -jar pong3.0.jar
 
 Peliä pääsee pelaamaan painamalla valikossa 'Pelaa' -nappia, pelin asetuksia pääsee säätämään painamalla 'Asetukset' -nappia ja pelistä voi poistua painamalla 'Poistu' -nappia.
 
-![Päävalikko](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/menu.png)
+<img align="center" src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/menu.png" width="400">
 
 ## Pelinäkymä
 
