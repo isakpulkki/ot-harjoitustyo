@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa .jar tiedosto [täältä](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/loppupalautus)
+Lataa ensin .jar tiedosto [täältä](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Ohjelman käynnistäminen
 
