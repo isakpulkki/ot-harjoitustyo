@@ -19,11 +19,12 @@ Peliä pääsee pelaamaan painamalla valikossa 'Pelaa' -nappia, pelin asetuksia 
 ## Pelinäkymä
 
 Painettuasi 'Pelaa' -nappia pitäisi avautua vastaava näkymä
+
 <img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/start.png" width="400">
 
 Peliä pelaa siis kaksi henkilöä, kontrolloiden pelaajansa ruudulla näkyvillä näppäimillä, osuessa palloon pelaajalla pallo kimpoaa vastakkaiseen suuntaan riippuen pelaajan kulmasta palloa kohden
 
-<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/pause.png" width="400">
+<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/paused.png" width="400">
 
 Jomman kumman pelaajan tehdessä pisteen peli keskeytyy kunnes jotain näppäintä painetaan, peli pelataan oletuksena kymmeneen pisteeseen, mutta tätä voi muuttaa config.properties -tiedostosta
 
