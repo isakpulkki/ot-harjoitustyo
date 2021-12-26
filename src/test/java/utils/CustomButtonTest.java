@@ -1,3 +1,5 @@
+package utils;
+
 import de.saxsys.javafx.test.JfxRunner;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;

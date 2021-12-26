@@ -1,7 +1,7 @@
 package pong.application.game.entities;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
+
 import pong.data.Config;
+
 import java.util.Random;
 
 /**
@@ -114,5 +114,21 @@ public class Ball extends Config {
 
     public int getySpeed() {
         return ySpeed;
+    }
+
+    public void setxPos(int xPos) {
+        this.xPos = xPos;
+    }
+
+    public void setyPos(int yPos) {
+        this.yPos = yPos;
+    }
+
+    public void setxSpeed(int xSpeed) {
+        this.xSpeed = xSpeed;
+    }
+
+    public void setySpeed(int ySpeed) {
+        this.ySpeed = ySpeed;
     }
 }

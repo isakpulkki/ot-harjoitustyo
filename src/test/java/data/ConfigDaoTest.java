@@ -1,3 +1,5 @@
+package data;
+
 import de.saxsys.javafx.test.JfxRunner;
 import org.junit.AfterClass;
 import org.junit.Test;
@@ -5,12 +7,10 @@ import org.junit.runner.RunWith;
 import pong.data.Config;
 import pong.data.ConfigDao;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.File;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
 @RunWith(JfxRunner.class)
 public class ConfigDaoTest {
@@ -18,12 +18,15 @@ public class ConfigDaoTest {
 
     public ConfigDaoTest() {
 
+        new ConfigDao("test");
     }
 
     @Test
-    public void testCreatingDatabase() throws SQLException {
-        new ConfigDao("test");
-        if ()
+    public void testCreatingDatabase() {
+        File f = new File("test.db");
+        if (f.exists()) {
+            assertTrue(true);
+        }
     }
 
     @Test
@@ -32,10 +35,11 @@ public class ConfigDaoTest {
         assertEquals(Config.playerHeight, 5);
     }
 
-    @Test
-    public void closeAndDeleteDao() {
-        ConfigDao.closeConnection();
-    }
-
     @AfterClass
+    public static void deleteTestDatabase() {
+        File f = new File("test.db");
+        if (f.exists()) {
+            f.delete();
+        }
+    }
 }

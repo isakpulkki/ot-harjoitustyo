@@ -1,6 +1,4 @@
 package pong.application.game.entities;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import pong.data.Config;
 
 /**

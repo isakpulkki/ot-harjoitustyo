@@ -1,4 +1,4 @@
-package game.entities;
+package application.entities;
 
 import de.saxsys.javafx.test.JfxRunner;
 import org.junit.Test;

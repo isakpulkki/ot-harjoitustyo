@@ -38,7 +38,7 @@ public class ConfigDao extends Config {
         try {
             statement.execute(createConfig());
         } catch (SQLException e) {
-            System.out.println("Config -column was not created, it already exists");
+            System.out.println("Config -database was not created, it already exists");
         }
     }
 
@@ -95,12 +95,5 @@ public class ConfigDao extends Config {
                 "playerHeight, " +
                 "difficulty," +
                 "ballRadius) values(1, 100, 10, 20)";
-    }
-
-    /**
-     * Just close's databases connection before shutting down the application
-     */
-    public static void closeConnection() {
-
     }
 }

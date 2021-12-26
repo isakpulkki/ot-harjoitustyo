@@ -64,7 +64,6 @@ public class MenuUi extends Config {
         settings.setOnMouseClicked(e -> new SettingsUi(stage).getSettingsScene());
         exit = new CustomButton("Poistu").getCustomButton();
         exit.setOnMouseClicked(e -> {
-            ConfigDao.closeConnection();
             System.out.println("Thanks for playing!");
             Platform.exit();
         });

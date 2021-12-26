@@ -1,6 +1,4 @@
 package pong.application.game;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import pong.application.game.entities.Ball;
 import pong.application.game.entities.Player;
 import pong.data.Config;
@@ -91,19 +89,19 @@ public class GameLogic extends Config {
     public void checkForScores() {
         if (this.ball.getxPos() < this.leftPlayer.getxPos() - playerWidth) {
             rightPlayer.increaseScore();
-            if (rightPlayer.getScore() == winScore) {
-                resetPlayersScore();
-                winnerRight = true;
-            }
             gameStarted = false;
+        }
+        if (rightPlayer.getScore() == winScore) {
+            resetPlayersScore();
+            winnerRight = true;
         }
         if (this.ball.getxPos() > this.rightPlayer.getxPos() + playerWidth) {
             leftPlayer.increaseScore();
-            if (leftPlayer.getScore() == winScore) {
-                resetPlayersScore();
-                winnerLeft = true;
-            }
             gameStarted = false;
+        }
+        if (leftPlayer.getScore() == winScore) {
+            resetPlayersScore();
+            winnerLeft = true;
         }
     }
 
