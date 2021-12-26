@@ -75,10 +75,6 @@ public class Ball extends Config {
             checkIfBallTooFar(playeryPos);
             this.xSpeed = xSpeed + 1;
             this.xSpeed *= -1;
-            if (sounds) {
-                MediaPlayer sound = new MediaPlayer(new Media(getClass().getResource("/hitsplayer.mp3").toExternalForm()));
-                sound.play();
-            }
         }
     }
 

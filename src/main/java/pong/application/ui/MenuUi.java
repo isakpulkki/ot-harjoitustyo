@@ -40,12 +40,12 @@ public class MenuUi extends Config {
         buttons.getChildren().addAll(this.start, this.settings, this.exit);
         buttons.setAlignment(Pos.CENTER);
         VBox logo = new VBox(20);
-        ImageView imageView = new ImageView("pong.png");
+        ImageView imageView = new ImageView("pngs/pong.png");
         imageView.setScaleX(0.70);
         imageView.setScaleY(0.70);
         logo.getChildren().add(imageView);
         logo.setAlignment(Pos.CENTER);
-        logo.setPadding(new Insets(100, 10, 10, 10));
+        logo.setPadding(new Insets(50, 10, 10, 10));
         borderPane.setTop(logo);
         borderPane.setCenter(buttons);
         borderPane.setStyle(style);

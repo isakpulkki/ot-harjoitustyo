@@ -11,6 +11,10 @@ import javafx.util.Duration;
 import pong.application.game.Graphics;
 import pong.data.Config;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 /**
  * Creates Game -scene and sets the games keyboard listeners
  */
@@ -31,7 +35,17 @@ public class GameUi extends Config {
         canvas.setFocusTraversable(true);
         javafx.scene.canvas.GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         Graphics graphics = new Graphics(graphicsContext);
-        KeyFrame keyframe = new KeyFrame(Duration.millis(15), e -> graphics.getGraphics());
+        KeyFrame keyframe = new KeyFrame(Duration.millis(15), e -> {
+            try {
+                graphics.getGraphics();
+            } catch (UnsupportedAudioFileException ex) {
+                ex.printStackTrace();
+            } catch (LineUnavailableException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
         Timeline timeline = new Timeline(keyframe);
         timeline.setCycleCount(Timeline.INDEFINITE);
         setKeyListenersOnPressed(graphics, canvas, timeline);

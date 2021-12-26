@@ -42,10 +42,6 @@ public class GameLogic extends Config {
             this.ball = new Ball();
         }
         if (this.ball.hitsTopOrBottom()) {
-            if (sounds) {
-                MediaPlayer sound = new MediaPlayer(new Media(getClass().getResource("/toporbottom.mp3").toExternalForm()));
-                sound.play();
-            }
             this.ball.reverseYdirection();
         }
         checkForHits();

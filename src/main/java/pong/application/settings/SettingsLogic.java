@@ -14,27 +14,6 @@ import pong.utils.CustomSlider;
  */
 public class SettingsLogic extends Config {
 
-
-    /**
-     * Creates button to switch on or off in-game sounds
-     */
-    public Button soundsButton() {
-        String text = Config.sounds ? "Pois" : "Päälle";
-        Button sounds = new CustomButton(text).getCustomButton();
-        sounds.setOnMouseClicked(e -> {
-            if (Config.sounds) {
-                Config.sounds = false;
-                ConfigDao.updateValue("sounds", 0);
-                sounds.setText("Päälle");
-            } else {
-                Config.sounds = true;
-                sounds.setText("Pois");
-                ConfigDao.updateValue("sounds", 1);
-            }
-        });
-        return sounds;
-    }
-
     /**
      * Creates slider to control the player-size
      */

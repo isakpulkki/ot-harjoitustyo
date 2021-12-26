@@ -25,10 +25,6 @@ public class Player extends Config {
      * increase players score
      */
     public void increaseScore() {
-        if (sounds) {
-            MediaPlayer sound = new MediaPlayer(new Media(getClass().getResource("/score.mp3").toExternalForm()));
-            sound.play();
-        }
         this.score++;
     }
 

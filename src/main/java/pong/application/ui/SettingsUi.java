@@ -33,7 +33,7 @@ public class SettingsUi extends Config {
         VBox vbox = new VBox(20);
         vbox.setAlignment(Pos.CENTER);
         SettingsLogic logic = new SettingsLogic();
-        vbox.getChildren().addAll(customLabel("Peliäänet"), logic.soundsButton(), customLabel("Vaikeustaso"), logic.difficultySlider(), customLabel("Pallo"), logic.ballSizeSlider(), customLabel("Pelaaja"), logic.playerSizeSlider(), menuButton());
+        vbox.getChildren().addAll(customLabel("Vaikeustaso"), logic.difficultySlider(), customLabel("Pallo"), logic.ballSizeSlider(), customLabel("Pelaaja"), logic.playerSizeSlider(), menuButton());
         borderPane.setCenter(vbox);
         this.stage.setScene(new Scene(borderPane, width, height));
     }

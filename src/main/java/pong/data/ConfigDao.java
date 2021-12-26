@@ -52,7 +52,6 @@ public class ConfigDao extends Config {
             Config.playerHeight = rs.getInt("playerHeight");
             Config.difficulty = rs.getInt("difficulty");
             Config.ballRadius = rs.getInt("ballRadius");
-            Config.sounds = rs.getBoolean("sounds");
         }
     }
 
@@ -85,8 +84,7 @@ public class ConfigDao extends Config {
                 "id INTEGER PRIMARY KEY, " +
                 "playerHeight INTEGER NOT NULL, " +
                 "difficulty INTEGER NOT NULL," +
-                "ballRadius INTEGER NOT NULL," +
-                "sounds BIT NOT NULL);";
+                "ballRadius INTEGER NOT NULL);";
     }
 
     /**
@@ -97,8 +95,7 @@ public class ConfigDao extends Config {
                 "id, " +
                 "playerHeight, " +
                 "difficulty," +
-                "ballRadius," +
-                "sounds) values(1, 100, 10, 20, true)";
+                "ballRadius) values(1, 100, 10, 20)";
     }
 
     /**

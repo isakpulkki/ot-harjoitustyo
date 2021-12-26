@@ -20,7 +20,6 @@ public class Config {
     public static int winScore;
     public static String style;
     public static Font font;
-    public static boolean sounds;
     public static Font smallFont;
 
     public int getHeight() {

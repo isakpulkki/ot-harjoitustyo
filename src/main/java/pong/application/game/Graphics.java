@@ -7,6 +7,10 @@ import pong.application.game.entities.Ball;
 import pong.application.game.entities.Player;
 import pong.data.Config;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 /**
  * This class creates graphics for the game and holds games logic
  */
@@ -27,7 +31,7 @@ public class Graphics extends Config {
     /**
      * This method initializes the games graphics and makes the calls for games logic
      */
-    public void getGraphics() {
+    public void getGraphics() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         logic.getGameLogic();
         leftPlayer = logic.getLeftPlayer();
         rightPlayer = logic.getRightPlayer();
@@ -106,13 +110,13 @@ public class Graphics extends Config {
         if (logic.isWinnerLeft()) {
             graphicsContext.setFill(Color.RED);
             graphicsContext.fillText("Voittaja!", width / 3, (height / 4) + 55);
-            image = new Image("/trophy.png", 100, 100, false, false);
+            image = new Image("/pngs/trophy.png", 100, 100, false, false);
             graphicsContext.drawImage(image, (width / 5), (height / 4));
         }
         if (logic.isWinnerRight()) {
             graphicsContext.setFill(Color.BLUE);
             graphicsContext.fillText("Voittaja!", width - (width / 5), (height / 4) + 55);
-            image = new Image("/trophy.png", 100, 100, false, false);
+            image = new Image("/pngs/trophy.png", 100, 100, false, false);
             graphicsContext.drawImage(image, width - (width / 3), (height / 4));
         }
     }
@@ -122,15 +126,15 @@ public class Graphics extends Config {
      */
     public void gameStarting(GraphicsContext graphicsContext) {
         graphicsContext.fillText("Aloita painamalla näppäintä", width / 2, height / 2);
-        Image image = new Image("/up.png", 100, 100, false, false);
+        Image image = new Image("/pngs/up.png", 100, 100, false, false);
         graphicsContext.drawImage(image, width - image.getWidth() * 2, height / 2 - (image.getHeight() / 1.5));
-        image = new Image("/down.png", 100, 100, false, false);
+        image = new Image("/pngs/down.png", 100, 100, false, false);
         graphicsContext.drawImage(image, width - image.getWidth() * 2, height / 2 + (image.getHeight() / 1.5));
-        image = new Image("/w.png", 100, 100, false, false);
+        image = new Image("/pngs/w.png", 100, 100, false, false);
         graphicsContext.drawImage(image, image.getWidth(), height / 2 - image.getHeight() / 1.5);
-        image = new Image("/s.png", 100, 100, false, false);
+        image = new Image("/pngs/s.png", 100, 100, false, false);
         graphicsContext.drawImage(image, image.getWidth(), height / 2 + image.getHeight() / 1.5);
-        image = new Image("/esc.png", 100, 100, false, false);
+        image = new Image("/pngs/esc.png", 100, 100, false, false);
         graphicsContext.drawImage(image, width / 2 - (image.getWidth() / 2), (height - image.getHeight() * 1.2));
         graphicsContext.fillText("Päävalikko", width / 2, height - (image.getHeight() * 1.5));
         checkForWinners(graphicsContext);

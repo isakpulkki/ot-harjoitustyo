@@ -26,7 +26,7 @@ public class Start extends Application {
         stage.setTitle("Pong");
         stage.setResizable(false);
         stage.setMaximized(false);
-        stage.getIcons().add(new Image(getClass().getResource("/icon.png").toExternalForm()));
+        stage.getIcons().add(new Image(getClass().getResource("/pngs/icon.png").toExternalForm()));
         new MenuUi(stage).getMenuScene();
     }
 
