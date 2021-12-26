@@ -4,10 +4,18 @@ Lataa tiedosto [pong_3.0.jar](https://github.com/isakpulkki/ot-harjoitustyo/rele
 
 ## Ohjelman käynnistäminen
 
-Ohjelma käynnistetään seuraavalla komennolla
-
+Suoritetaan Linuxissa komennolla
 ```
-java -jar pong3.0.jar
+java -jar pong3.0_linux.jar
+```
+tai Windowsissa
+```
+java -jar pong3.0_windows.jar
+```
+
+Pelin konfiguraatiota voi muokata tiedostossa
+```
+\src\main\resources\config.properties
 ```
 
 ## Päävalikko
