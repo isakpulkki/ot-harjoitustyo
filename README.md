@@ -40,7 +40,7 @@ mvn compile exec:java -Dexec.mainClass=pong.Main
 ```
 tai vaihtoehtoisesti ohjelmasta voi luoda .jar -tiedoston komennolla
 ```
-mvn compile exec:java -Dexec.mainClass=pong.Main
+mvn package
 ```
 
 ### Checkstyle
