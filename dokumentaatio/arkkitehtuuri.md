@@ -19,5 +19,5 @@ Luokkakaaviosta näkee, että kaikki luokat ovat riippuvaisia Config-luokasta. C
 
 Tämä sekvenssikaavio kuvaa ohjelman toimintaa käyttäjän syötteiden käsittelyyn
 
-<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/sekvenssikaavio.png" width="750">
+<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/sequencediagram.png" width="600">
 
