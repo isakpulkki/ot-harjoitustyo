@@ -13,7 +13,7 @@ tai Windowsissa
 java -jar pong3.0_windows.jar
 ```
 
-Pelin konfiguraatiota voi muokata tiedostossa
+Pelin konfiguraatiota voi muokata lähdekoodissa tiedostossa
 ```
 \src\main\resources\config.properties
 ```
