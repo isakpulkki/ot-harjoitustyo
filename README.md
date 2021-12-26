@@ -38,7 +38,8 @@ Ohjelman pystyy suorittamaan juurikansiossa komennolla
 ```
 mvn compile exec:java -Dexec.mainClass=pong.Main
 ```
-tai vaihtoehtoisesti ohjelmasta voi luoda .jar -tiedoston komennolla
+
+Vaihtoehtoisesti ohjelmasta voi luoda .jar -tiedoston komennolla
 ```
 mvn package
 ```
