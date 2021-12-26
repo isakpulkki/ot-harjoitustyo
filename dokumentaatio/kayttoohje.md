@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [pong_3.0.jar](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/loppupalautus)
+Lataa .jar tiedosto [täältä](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Ohjelman käynnistäminen
 
