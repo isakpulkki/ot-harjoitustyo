@@ -14,7 +14,7 @@ Asetuslogiikkaa testaa *SettingsLogicTest*. Logiikan testit testaavat samalla my
 ### Testauskattavuus
 Kaikkia luokkia jotka eivät ole riippuvaisia JavaFX:stä on testattu, eli kaikki käyttöliittymästä poisluetut luokat on testattu. Testien rivikattavuus on 81%.
 
-<img src=https://raw.githubusercontent.com/D3lux3/ratsimulator/master/documentation/imgs/kattavuus.png "Testikattavuus" width=400>
+<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/tests.png" width=400>
 
 ## Järjestelmätestaus
 
