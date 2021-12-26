@@ -1,8 +1,8 @@
 <h1>Ohjelmistotekniikka, harjoitustyö</h1>
 
-### Pong Game
+### Pong
 
-Tässä sovelluksessa voi pelata suosittua pöytätenniksen kaltaista kaksinpeliä, Pongia. Projekti on luotu Javan versiolla 11, käyttäen JavaFX:ää. Projektin pom.xml:ssä on määritelty Mavenin käyttävän version 1.8 kääntäjää.
+Tässä sovelluksessa voi pelata suosittua pöytätenniksen kaltaista kaksinpeliä, Pongia. Sovellus on ohjelmoitu Javalla käyttäen JavaFX:ää.
 
 <h2>Dokumentaatio</h2>
 
