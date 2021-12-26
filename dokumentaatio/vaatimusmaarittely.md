@@ -9,7 +9,7 @@ Tällä sovelluksella käyttäjät voivat pelata 'Pong' -videopeliä. Tämä pel
 ### Valikkonäkymä
 
 - sisältää pelin logon <em>tehty</em>
-- tästä pääsee pelinäkymään, asetusnäkymään tai poistumaan sovelluksesta <em>tehty</em>
+- pääsee pelinäkymään, asetusnäkymään tai poistumaan sovelluksesta <em>tehty</em>
 
 ### Pelinäkymä
 
