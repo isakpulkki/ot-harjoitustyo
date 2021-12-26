@@ -6,7 +6,7 @@ Tässä sovelluksessa voi pelata suosittua pöytätenniksen kaltaista kaksinpeli
 
 <h2>Dokumentaatio</h2>
 
-[Pong 2.0](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/viikko6)
+[Pong 3.0](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/loppupalautus)
 
 [Vaatimusmäärittely](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
