@@ -1,20 +1,19 @@
 # Käyttöohje
 
-Lataa tiedosto [pong_2.0.jar](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/viikko6)
+Lataa tiedosto [pong_3.0.jar](https://github.com/isakpulkki/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Ohjelman käynnistäminen
 
-Ohjelma käynnistetään seuraavalla komennolla 
+Ohjelma käynnistetään seuraavalla komennolla
 
 ```
-java -jar todoapp.jar
+java -jar pong3.0.jar
 ```
 
-## Pelaaminen
+## Päävalikko
 
-Peliä pääsee pelaamaan painamalla valikossa 'Pelaa' -nappia, sovelluslogiikka on vielä hieman kesken mutta peliä pystyy pelaamaan, näkymässä ohjeet pelin pelaamiseen, 
-pelin on tarkoitus myös myöhemmin loppua jossain pisteessä.
-
+Peliä pääsee pelaamaan painamalla valikossa 'Pelaa' -nappia, pelin asetuksia pääsee säätämään painamalla 'Asetukset' -nappia ja pelistä voi poistua painamalla 'Poistu' -nappia.
+![Päävalikko](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/menu.png)
 ## Asetuksien vaihto
 
 'Asetukset' -nappia painamalla pääsee asetusnäkymään, jossa voi vaihtaa tällä hetkellä pelin vaikeustasoa.
