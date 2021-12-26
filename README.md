@@ -33,11 +33,17 @@ Testikattavuusraportti luodaan komennolla
 mvn jacoco:report
 ```
 ### Ohjelman suoritus
-Ohjelman pystyy suorittamaan komennolla
+Ohjelman pystyy suorittamaan juurikansiossa komennolla
 
 ```
 mvn compile exec:java -Dexec.mainClass=pong.Main
 ```
+
+Vaihtoehtoisesti ohjelmasta voi luoda .jar -tiedoston komennolla
+```
+mvn package
+```
+
 ### Checkstyle
 
 Checkstyle -tarkistukset suoritetaan komennolla
