@@ -1,4 +1,5 @@
 import de.saxsys.javafx.test.JfxRunner;
+import org.junit.AfterClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import pong.data.Config;
@@ -14,22 +15,15 @@ import static junit.framework.TestCase.assertEquals;
 @RunWith(JfxRunner.class)
 public class ConfigDaoTest {
 
-    Connection connection;
 
     public ConfigDaoTest() {
-        new ConfigDao("test");
+
     }
 
     @Test
     public void testCreatingDatabase() throws SQLException {
-        Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select * from config");
-        int playerHeightDao = 0;
-        while (rs.next()) {
-            // Read the result set
-            playerHeightDao = rs.getInt("playerHeight");
-        }
-        assertEquals(Config.playerHeight, playerHeightDao);
+        new ConfigDao("test");
+        if ()
     }
 
     @Test
@@ -42,4 +36,6 @@ public class ConfigDaoTest {
     public void closeAndDeleteDao() {
         ConfigDao.closeConnection();
     }
+
+    @AfterClass
 }
