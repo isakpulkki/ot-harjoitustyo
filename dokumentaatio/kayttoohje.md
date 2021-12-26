@@ -12,7 +12,7 @@ java -jar pong3.0.jar
 
 ## Päävalikko
 
-Peliä pääsee pelaamaan painamalla valikossa 'Pelaa' -nappia, pelin asetuksia pääsee säätämään painamalla 'Asetukset' -nappia ja pelistä voi poistua painamalla 'Poistu' -nappia.
+Peliä pääsee pelaamaan painamalla valikossa 'Pelaa' -nappia, pelin asetuksia pääsee säätämään painamalla 'Asetukset' -nappia ja pelistä voi poistua painamalla 'Poistu' -nappia
 
 <img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/menu.png" width="400">
 
@@ -30,8 +30,13 @@ Jomman kumman pelaajan tehdessä pisteen peli keskeytyy kunnes jotain näppäint
 
 <img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/win.png" width="400">
 
-Pelaajan saavuttaessa pisterajan pelaaja voittaa, pelaajien pisteet nollautuu ja peli palaa aloitusnäkymään
-## Sulkeminen
+Pelaajan saavuttaessa pisterajan pelaaja voittaa, pelaajien pisteet nollautuu ja peli palaa aloitusnäkymään tai vaihtoehtoisesti päävalikkoon voi palata ESC-näppäimestä
 
-'Poistu' -napista voi sulkea pelin, tai vaihtoehtoisesti ruksia painamalla.
+## Asetusnäkymä
+
+'Asetukset' -nappia painettuasi vastaavan näkymän pitäisi avautua
+
+<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/settings.png" width="400">
+
+Asetuksissa voi säätää kuvassa näkyviä asetuksia, jotka myös tallentuvat tietokantaan jolloin asetukset säilyvät myös pelin sammutettuasi
 
