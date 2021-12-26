@@ -16,6 +16,8 @@ Tässä sovelluksessa voi pelata suosittua pöytätenniksen kaltaista kaksinpeli
 
 [Käyttöohje](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
+[Testaus](https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
+
 
 <h2>Komentorivitoiminnot</h2>
 
