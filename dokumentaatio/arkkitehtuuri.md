@@ -3,7 +3,7 @@
 
 Sovelluksen pakkausrakenne on seuraava
 
-<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/5be0e73879f20b9a7a443c59c075d37190eb3dbd/dokumentaatio/images/packages.png" width="600">
+<img src="https://github.com/isakpulkki/ot-harjoitustyo/blob/master/dokumentaatio/images/packages.png" width="600">
 
 Sovellus on jaettu omiin pakkauksiin tietokantaa ja konfiguraatiota säätelevään pakkaukseen, pelilogiikan pakkauksen, asetuslogiikan pakkaukseen, käyttöliittymän pakkaukseen ja utiliteettien pakkaukseen.
 
