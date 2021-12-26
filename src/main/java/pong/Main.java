@@ -4,6 +4,7 @@ package pong;
 import javafx.scene.text.Font;
 import pong.data.Config;
 import pong.data.ConfigDao;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;

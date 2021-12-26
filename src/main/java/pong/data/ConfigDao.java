@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class ConfigDao extends Config {
 
-    static Connection connection;
+    static String dbName;
 
     /**
      * Just makes connection to the database
@@ -16,25 +16,23 @@ public class ConfigDao extends Config {
     public ConfigDao(String name) {
         try {
             // Create a database connection
-            connection = DriverManager.getConnection("jdbc:sqlite:" + name + ".db");
-            createDatabase();
-            getConfigurations();
-
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:" + name + ".db");
+            dbName = name;
+            createDatabase(connection);
+            getConfigurations(connection);
+            connection.close();
         } catch (
                 SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static Connection getConnection() {
-        return connection;
-    }
 
     /**
      * Gets different attributes from the database to the application's configuration
      */
 
-    public static void createDatabase() throws SQLException {
+    public static void createDatabase(Connection connection) throws SQLException {
         Statement statement = connection.createStatement();
         statement.execute(createTable());
         try {
@@ -44,7 +42,7 @@ public class ConfigDao extends Config {
         }
     }
 
-    public static void getConfigurations() throws SQLException {
+    public static void getConfigurations(Connection connection) throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("select * from config");
         while (rs.next()) {
@@ -54,12 +52,12 @@ public class ConfigDao extends Config {
             Config.ballRadius = rs.getInt("ballRadius");
         }
     }
-
     /**
      * Updates value modified in SettingsScene
      */
     public static void updateValue(String row, int value) {
         try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:" + dbName + ".db");
             Statement statement = connection.createStatement();
             statement.executeUpdate("UPDATE config SET " + row + " = " + value + " where id=1");
             if (row.equals("playerHeight")){
@@ -71,6 +69,7 @@ public class ConfigDao extends Config {
             if (row.equals("ballRadius")){
                 Config.ballRadius = value;
             }
+            connection.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -102,11 +101,6 @@ public class ConfigDao extends Config {
      * Just close's databases connection before shutting down the application
      */
     public static void closeConnection() {
-        try {
-            connection.close();
-            connection = null;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 }

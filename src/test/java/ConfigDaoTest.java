@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertNull;
 
 @RunWith(JfxRunner.class)
 public class ConfigDaoTest {
@@ -19,12 +18,10 @@ public class ConfigDaoTest {
 
     public ConfigDaoTest() {
         new ConfigDao("test");
-        connection = ConfigDao.getConnection();
     }
 
     @Test
     public void testCreatingDatabase() throws SQLException {
-        ConfigDao.createDatabase();
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("select * from config");
         int playerHeightDao = 0;
@@ -44,6 +41,5 @@ public class ConfigDaoTest {
     @Test
     public void closeAndDeleteDao() {
         ConfigDao.closeConnection();
-        assertNull(ConfigDao.getConnection());
     }
 }
